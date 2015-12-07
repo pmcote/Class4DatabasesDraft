@@ -23,6 +23,8 @@ sudo apt-get update;
 sudo apt-get install -y mongodb-org
 ```
 
+If you have a mac, you can consult these [instructions](https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
+
 Once installed, start the database by running:
 ```sh
 sudo service mongod start
@@ -67,12 +69,14 @@ test  0.203125GB
 ```
 Mongo creates a database for us as soon as we start inserting items into it. It stores data in what's known as a `collection`. So in our case, users would be a collection. Items within a collection don't have to be consistent with each other (alice only has a name while bob has a name and a grade).
 
-We can also delete items:
+We can also delete specific items, or a whole collection:
 ```
 > db.users.remove({'name': 'alice'})
 > db.users.find()
 { "_id" : ObjectId("510078bee481634f390b1630"), "name" : "bob", "grade" : "A",
 "assignments" : [ { "grade" : "A", "grade" : "B" } ] }
+> db.users.drop()
+true
 ```
 Modify items:
 ```sh
@@ -120,9 +124,10 @@ User.find({name: 'bob'})
     console.log(users);
   });
 ```
+
 Find all users with the name 'bob', sort them in descending order based on their grade, and then print them to the console.
 Using the exec function allows you to chain multiple query elements (like `find` and `sort`) together before providing a callback.
 This allows Mongoose to form one large Mongo query and be more performant than running additional queries in the callbacks of other queries.
 Check out the [getting started](http://mongoosejs.com/docs/index.html) guide on Mongoose to learn how to connect to your MongoDB database and the basics of saving and loading records.
 
-In the [exercises](./exercises.md) you will explore more about how to leverage MongoDB and Mongoose to store data persistently.
+But how do your organize all these new database calls? We will work on that during the in-class so that you can work though the exercises with ease.
