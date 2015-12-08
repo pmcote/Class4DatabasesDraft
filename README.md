@@ -130,4 +130,4 @@ Using the exec function allows you to chain multiple query elements (like `find`
 This allows Mongoose to form one large Mongo query and be more performant than running additional queries in the callbacks of other queries.
 Check out the [getting started](http://mongoosejs.com/docs/index.html) guide on Mongoose to learn how to connect to your MongoDB database and the basics of saving and loading records.
 
-But how do your organize all these new database calls? We will work on that during the in-class so that you can work though the exercises with ease.
+How do your organize all these new database calls? We will work on that during the in-class so that you can work though the exercises with ease.
